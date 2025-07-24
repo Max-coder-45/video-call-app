@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connect Call</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div id="join-screen" class="screen">
+    <h2>Join a Meeting</h2>
+    <input type="text" id="username" placeholder="Enter your name" />
+    <select id="callType">
+      <option value="video">🎥 Video Call</option>
+      <option value="audio">🎧 Voice Call</option>
+    </select>
+    <button id="join-btn">Join Call</button>
+  </div>
+
+  <div id="call-screen" class="screen hidden">
+    <div class="header">
+      <h3 id="my-name"></h3>
+      <button id="leave-btn">Leave</button>
+    </div>
+
+    <div class="video-container">
+      <video id="local-video" autoplay muted></video>
+      <div id="remote-videos"></div>
+    </div>
+
+    <div class="controls">
+      <button id="toggle-video">📷</button>
+      <button id="toggle-audio">🎙️</button>
+      <button id="share-screen">🖥️</button>
+      <button id="record-btn">⏺️</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
